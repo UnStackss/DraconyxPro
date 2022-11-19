@@ -11,7 +11,6 @@ object TabComplete : Listener {
     @EventHandler
     fun onPlayerTab(event: PlayerCommandSendEvent) {
         val blockedTabCommands: List<String> = plugin.config.getStringList("bTabCommands")
-        val player = event.player
         for(tabcmds in blockedTabCommands) {
             event.commands.remove(tabcmds)
         }
