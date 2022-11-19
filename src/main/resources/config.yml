@@ -1,0 +1,44 @@
+#      ____                                            ____  ____  ____
+#     / __ \_________ __________  ____  __  ___  __   / __ \/ __ \/ __ \
+#    / / / / ___/ __ `/ ___/ __ \/ __ \/ / / / |/_/  / /_/ / /_/ / / / /
+#   / /_/ / /  / /_/ / /__/ /_/ / / / / /_/ />  <   / ____/ _, _/ /_/ /
+#  /_____/_/   \__,_/\___/\____/_/ /_/\__, /_/|_|  /_/   /_/ |_|\____/
+#                                    /____/
+# By MyNameIsKiyoshi Version (1.20.5) Block CMDs, TabComplete, F3-Mark and More!! (1.19.2)
+# GitHub: https://github.com/MyNameIsKiyoshi Discord: https://discord.gg/ka7uGKfy7p (Pro Version)
+
+# Don't Touch This Section
+vConfig: "18"
+
+# F3-Mark
+F3Mark:
+  Status: true
+  Mark: "&9&lProtected By Draconyx PRO"
+
+PluginsSpoof: # You Can Edit The Mesage From language.yml
+  Status: false
+
+# Protected Operators (Allowed Ops)
+OpSProtection:
+  Status: true
+  Operators:
+    - "MyNameIsKiyoshi"
+    - "ExamplePlayer"
+
+# TabComplete Blocked Commands
+bTabCommands:
+  - "version"
+  - "about"
+  - "plugins"
+
+# Blocked Commands
+bCommands:
+  - "/version"
+  - "/about"
+  - "/plugins"
+
+# Sounds System Link Of All Sounds Below.
+# https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
+Sounds:
+  Status: true
+  AccessDenied: "ENTITY_VILLAGER_NO"
