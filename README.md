@@ -6,7 +6,16 @@
 </div>
 
 ---
-
+<div align="center">
+<img alt="GitHub all releases" src="https://img.shields.io/github/downloads/MyNameIsKiyoshi/DraconyxPRO/total?color=blue&style=for-the-badge">
+<img alt="GitHub forks" src="https://img.shields.io/github/forks/MyNameIsKiyoshi/DraconyxPRO?color=blue&style=for-the-badge">
+</div>
+<div align="center">
+<img alt="Discord" src="https://img.shields.io/discord/1024629526518562876?color=blue&label=discord%20online%20members&style=for-the-badge">
+</div>
+<div align="center">
+<img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/KiyoshiWhitePaw?style=social">
+</div>
 <div align="center">
 <h3>DraconyxPro Is a PluginHider, CommandHider, CustomBrand And More In Kotlin For Spigot 1.19.2</h3>
 </div>
