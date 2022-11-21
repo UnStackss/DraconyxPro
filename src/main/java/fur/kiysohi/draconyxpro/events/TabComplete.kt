@@ -10,9 +10,12 @@ object TabComplete : Listener {
 
     @EventHandler
     fun onPlayerTab(event: PlayerCommandSendEvent) {
+        val player = event.player
         val blockedTabCommands: List<String> = plugin.config.getStringList("bTabCommands")
         for(tabcmds in blockedTabCommands) {
-            event.commands.remove(tabcmds)
+            if(!player.hasPermission("draconyx.tab.bypass")){
+                event.commands.remove(tabcmds)
+            }
         }
     }
 }
