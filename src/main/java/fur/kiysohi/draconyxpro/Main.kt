@@ -22,7 +22,7 @@ class Main : JavaPlugin(), Listener, PluginMessageListener {
     companion object {
         var plugin:Main by Delegates.notNull()
         var PAPI = false
-        var PROCOLLIB = false
+        var PROTOCOLLIB = false
     }
 
     @Suppress("FunctionName")
@@ -85,8 +85,8 @@ class Main : JavaPlugin(), Listener, PluginMessageListener {
         PAPI = server.pluginManager.getPlugin("PlaceholderAPI") != null
         if (PAPI) logger.info("[Draconyx] PlaceholderAPI found.")
         else logger.info("[Draconyx] PlaceholderAPI not found.")
-        PROCOLLIB = server.pluginManager.getPlugin("ProtocolLib") != null
-        if (PROCOLLIB) logger.info("[Draconyx] ProtocolLib found.")
+        PROTOCOLLIB = server.pluginManager.getPlugin("ProtocolLib") != null
+        if (PROTOCOLLIB) logger.info("[Draconyx] ProtocolLib found.")
         else logger.info("[Draconyx] ProtocolLib not found.")
         if(config.getString("vConfig") != "18"){
             logger.severe("[Draconyx] Error while loading configuration. (Fatal vConfig Change)")
