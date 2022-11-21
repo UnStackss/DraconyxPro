@@ -15,7 +15,7 @@ F3Mark:
   Status: true
   Mark: "&9&lProtected By Draconyx PRO"
 
-PluginsSpoof: # You Can Edit The Mesage From language.yml
+PluginsSpoof: # Message Editable In language.yml
   Status: false
 
 # Protected Operators (Allowed Ops)
