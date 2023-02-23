@@ -1,6 +1,6 @@
 package fur.kiysohi.draconyxpro.events
 
-import fur.kiysohi.draconyxpro.Main
+import fur.kiysohi.draconyxpro.Main.Companion.plugin
 import fur.kiysohi.draconyxpro.utils.Format
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
@@ -11,9 +11,9 @@ object JoinUpdateChecker: Listener {
     @EventHandler
     fun onJoin(event: PlayerJoinEvent) {
         val player = event.player
-        if (Main.updateChecker.isUpdateAvailable()) {
+        if (plugin.updateChecker.isUpdateAvailable()) {
             if(player.isOp){
-                player.sendMessage(Format.color("&7[&9DraconyX&7] &eNew update avaliable (&6${Main.updateChecker.getLatestVersion()}&e) for DraconyX downloadable jar -> &6https://spigot.kiyoshi.space"))
+                player.sendMessage(Format.color("&7[&9DraconyX&7] &eNew update avaliable (&6${plugin.updateChecker.getLatestVersion()}&e) for DraconyX downloadable jar -> &6https://spigot.kiyoshi.space"))
             }
         } else {
             if(player.isOp){

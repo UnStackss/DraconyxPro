@@ -1,6 +1,5 @@
 package fur.kiysohi.draconyxpro.commands
 
-import fur.kiysohi.draconyxpro.Main
 import fur.kiysohi.draconyxpro.Main.Companion.plugin
 import fur.kiysohi.draconyxpro.utils.Format
 import fur.kiysohi.draconyxpro.utils.Message.accessDenied
@@ -44,8 +43,8 @@ object DraconyX : CommandExecutor, TabCompleter {
                 }
                 "updatecheck" -> {
                     if(player.hasPermission("draconyx.admin.update")){
-                        if (Main.updateChecker.isUpdateAvailable()) {
-                            player.sendMessage(Format.color("&7[&9DraconyX&7] &eNew update avaliable (&6${Main.updateChecker.getLatestVersion()}&e) for DraconyX downloadable jar -> &6https://spigot.kiyoshi.space"))
+                        if (plugin.updateChecker.isUpdateAvailable()) {
+                            player.sendMessage(Format.color("&7[&9DraconyX&7] &eNew update avaliable (&6${plugin.updateChecker.getLatestVersion()}&e) for DraconyX downloadable jar -> &6https://spigot.kiyoshi.space"))
                         } else {
                             player.sendMessage(Format.color("&7[&9DraconyX&7] &aYou are running the latest version of DraconyX"))
                         }

@@ -25,8 +25,10 @@ class Main : JavaPlugin(), Listener, PluginMessageListener {
         var PAPI = false
         var PROTOCOLLIB = false
         private const val resourceId = 106335
-        val updateChecker = KiyoshiUpdateChecker(plugin, resourceId)
+
     }
+
+    val updateChecker = KiyoshiUpdateChecker(plugin, resourceId)
 
     @Suppress("FunctionName")
     private fun Initialize () {
