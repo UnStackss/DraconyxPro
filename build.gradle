@@ -3,11 +3,11 @@ plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.8.0-Beta'
 }
 
-group = 'fur.kiysohi'
-version = '1.20.5'
+group = 'fur.kiyoshi'
+version = '1.20.5a'
+
 
 repositories {
-    mavenCentral()
     maven {
         name = 'spigotmc-repo'
         url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
@@ -15,10 +15,6 @@ repositories {
     maven {
         name = 'sonatype'
         url = 'https://oss.sonatype.org/content/groups/public/'
-    }
-    maven { url "https://repo.dmulloy2.net/repository/public/" }
-    maven {
-        url = 'https://repo.extendedclip.com/content/repositories/placeholderapi/'
     }
     maven {
         url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
@@ -41,15 +37,20 @@ repositories {
     */
     maven { url = 'https://oss.sonatype.org/content/repositories/snapshots' }
     maven { url = 'https://oss.sonatype.org/content/repositories/central' }
+    maven {
+        url = 'https://repo.extendedclip.com/content/repositories/placeholderapi/'
+    }
+    maven { url "https://repo.dmulloy2.net/repository/public/" }
+
     mavenLocal()
     mavenCentral() // This is needed for CraftBukkit and Spigot.
 }
 
 dependencies {
-    compileOnly 'org.spigotmc:spigot-api:1.19.2-R0.1-SNAPSHOT'
+    //noinspection VulnerableLibrariesLocal
+    compileOnly 'org.spigotmc:spigot-api:1.19.3-R0.1-SNAPSHOT'
     //noinspection VulnerableLibrariesLocal
     compileOnly 'org.spigotmc:spigot:1.19.2-R0.1-SNAPSHOT'
-    compileOnly group: "com.comphenix.protocol", name: "ProtocolLib", version: "4.7.0"
     compileOnly 'me.clip:placeholderapi:2.11.2'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 }
