@@ -1,10 +1,8 @@
-@file:Suppress("NAME_SHADOWING")
-
 package fur.kiysohi.draconyxpro.commands
 
+import fur.kiysohi.draconyxpro.Main
 import fur.kiysohi.draconyxpro.Main.Companion.plugin
 import fur.kiysohi.draconyxpro.utils.Format
-import fur.kiysohi.draconyxpro.utils.KiyoshiUpdateChecker
 import fur.kiysohi.draconyxpro.utils.Message.accessDenied
 import fur.kiysohi.draconyxpro.utils.Message.getPrefix
 import fur.kiysohi.draconyxpro.utils.Message.reloadConfiguration
@@ -46,13 +44,14 @@ object DraconyX : CommandExecutor, TabCompleter {
                 }
                 "updatecheck" -> {
                     if(player.hasPermission("draconyx.admin.update")){
-                        KiyoshiUpdateChecker(plugin, 106335).getVersion { version ->
-                            if (plugin.description.version == version) {
-                                player.sendMessage(Format.color("&7[&9DraconyX7] &aYou are running the latest version of DraconyX"))
-                            } else {
-                                player.sendMessage(Format.color("&7[&9DraconyX7] &eNew update avaliable for DraconyX downloadable from &6https://spigot.kiyoshi.space"))
-                            }
+                        if (Main.updateChecker.isUpdateAvailable()) {
+                            player.sendMessage(Format.color("&7[&9DraconyX&7] &eNew update avaliable (&6${Main.updateChecker.getLatestVersion()}&e) for DraconyX downloadable jar -> &6https://spigot.kiyoshi.space"))
+                        } else {
+                            player.sendMessage(Format.color("&7[&9DraconyX&7] &aYou are running the latest version of DraconyX"))
                         }
+                    } else {
+                        player.sendMessage(Format.color(getPrefix() + accessDenied()))
+                        player.playSound(player.location, Sound.ENTITY_ITEM_BREAK, 100f ,1f)
                     }
                 }
             }

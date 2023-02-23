@@ -3,6 +3,7 @@ package fur.kiysohi.draconyxpro
 import fur.kiysohi.draconyxpro.commands.DraconyX
 import fur.kiysohi.draconyxpro.events.*
 import fur.kiysohi.draconyxpro.utils.KiyoshiUpdateChecker
+import org.bukkit.Bukkit
 import org.bukkit.configuration.file.FileConfiguration
 import org.bukkit.configuration.file.YamlConfiguration
 import org.bukkit.entity.Player
@@ -23,6 +24,8 @@ class Main : JavaPlugin(), Listener, PluginMessageListener {
         var plugin:Main by Delegates.notNull()
         var PAPI = false
         var PROTOCOLLIB = false
+        private const val resourceId = 106335
+        val updateChecker = KiyoshiUpdateChecker(plugin, resourceId)
     }
 
     @Suppress("FunctionName")
@@ -93,12 +96,10 @@ class Main : JavaPlugin(), Listener, PluginMessageListener {
             logger.severe("[DraconyX] Error while loading configuration. (Fatal vConfig Change) Check Updates on https://spigot.kiyoshi.space")
             pluginLoader.disablePlugin(this)
         }
-        KiyoshiUpdateChecker(this, 106335).getVersion { version ->
-            if (description.version == version) {
-                logger.info("[DraconyX7] You are running the latest version of DraconyX")
-            } else {
-                logger.info("[DraconyX7] New update avaliable for DraconyX downloadable from https://spigot.kiyoshi.space")
-            }
+        if (updateChecker.isUpdateAvailable()) {
+            Bukkit.getLogger().info("[DraconyX] New update avaliable (${updateChecker.getLatestVersion()}) for DraconyX downloadable jar -> https://spigot.kiyoshi.space")
+        } else {
+            Bukkit.getLogger().info("[DraconyX] You are running the latest version of DraconyX")
         }
     }
 
