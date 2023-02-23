@@ -2,8 +2,6 @@ package fur.kiysohi.draconyxpro
 
 import fur.kiysohi.draconyxpro.commands.DraconyX
 import fur.kiysohi.draconyxpro.events.*
-import fur.kiysohi.draconyxpro.utils.KiyoshiUpdateChecker
-import org.bukkit.Bukkit
 import org.bukkit.configuration.file.FileConfiguration
 import org.bukkit.configuration.file.YamlConfiguration
 import org.bukkit.entity.Player
@@ -15,20 +13,15 @@ import java.io.DataInputStream
 import java.io.File
 import java.io.IOException
 import java.util.*
-import kotlin.properties.Delegates
 
 
 class Main : JavaPlugin(), Listener, PluginMessageListener {
 
     companion object {
-        var plugin:Main by Delegates.notNull()
+        lateinit var plugin: Main
         var PAPI = false
         var PROTOCOLLIB = false
-        private const val resourceId = 106335
-
     }
-
-    val updateChecker = KiyoshiUpdateChecker(plugin, resourceId)
 
     @Suppress("FunctionName")
     private fun Initialize () {
@@ -44,6 +37,8 @@ class Main : JavaPlugin(), Listener, PluginMessageListener {
         server.messenger.registerOutgoingPluginChannel(this, "minecraft:brand")
         server.messenger.registerIncomingPluginChannel(this, "minecraft:brand", this)
     }
+
+
 
     @Suppress("FunctionName")
     private fun Config() {
@@ -97,11 +92,6 @@ class Main : JavaPlugin(), Listener, PluginMessageListener {
         if(config.getString("vConfig") != "19"){
             logger.severe("[DraconyX] Error while loading configuration. (Fatal vConfig Change) Check Updates on https://spigot.kiyoshi.space")
             pluginLoader.disablePlugin(this)
-        }
-        if (updateChecker.isUpdateAvailable()) {
-            Bukkit.getLogger().info("[DraconyX] New update avaliable (${updateChecker.getLatestVersion()}) for DraconyX downloadable jar -> https://spigot.kiyoshi.space")
-        } else {
-            Bukkit.getLogger().info("[DraconyX] You are running the latest version of DraconyX")
         }
     }
 

@@ -2,6 +2,7 @@ package fur.kiysohi.draconyxpro.commands
 
 import fur.kiysohi.draconyxpro.Main.Companion.plugin
 import fur.kiysohi.draconyxpro.utils.Format
+import fur.kiysohi.draconyxpro.utils.KiyoshiUpdateChecker
 import fur.kiysohi.draconyxpro.utils.Message.accessDenied
 import fur.kiysohi.draconyxpro.utils.Message.getPrefix
 import fur.kiysohi.draconyxpro.utils.Message.reloadConfiguration
@@ -43,10 +44,10 @@ object DraconyX : CommandExecutor, TabCompleter {
                 }
                 "updatecheck" -> {
                     if(player.hasPermission("draconyx.admin.update")){
-                        if (plugin.updateChecker.isUpdateAvailable()) {
-                            player.sendMessage(Format.color("&7[&9DraconyX&7] &eNew update avaliable (&6${plugin.updateChecker.getLatestVersion()}&e) for DraconyX downloadable jar -> &6https://spigot.kiyoshi.space"))
+                        if (KiyoshiUpdateChecker(plugin, 106335).isUpdateAvailable()) {
+                            player.sendMessage(Format.color("&7[&9DraconyX&7] &eNew update avaliable (&6${KiyoshiUpdateChecker(plugin, 106335).getLatestVersion()}&e) for DraconyX downloadable jar -> &6https://spigot.kiyoshi.space"))
                         } else {
-                            player.sendMessage(Format.color("&7[&9DraconyX&7] &aYou are running the latest version of DraconyX"))
+                            player.sendMessage(Format.color("&7[&9DraconyX&7] &aYou are running the latest version of DraconyX &a(&2${KiyoshiUpdateChecker(plugin, 106335).getCurrentVersion()}&a)"))
                         }
                     } else {
                         player.sendMessage(Format.color(getPrefix() + accessDenied()))
