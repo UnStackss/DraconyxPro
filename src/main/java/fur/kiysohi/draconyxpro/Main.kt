@@ -1,10 +1,8 @@
 package fur.kiysohi.draconyxpro
 
-import fur.kiysohi.draconyxpro.commands.Draconyx
-import fur.kiysohi.draconyxpro.events.BlockedCMDs
-import fur.kiysohi.draconyxpro.events.F3BrandChange
-import fur.kiysohi.draconyxpro.events.OPProtection
-import fur.kiysohi.draconyxpro.events.TabComplete
+import fur.kiysohi.draconyxpro.commands.DraconyX
+import fur.kiysohi.draconyxpro.events.*
+import fur.kiysohi.draconyxpro.utils.KiyoshiUpdateChecker
 import org.bukkit.configuration.file.FileConfiguration
 import org.bukkit.configuration.file.YamlConfiguration
 import org.bukkit.entity.Player
@@ -15,7 +13,9 @@ import java.io.ByteArrayInputStream
 import java.io.DataInputStream
 import java.io.File
 import java.io.IOException
+import java.util.*
 import kotlin.properties.Delegates
+
 
 class Main : JavaPlugin(), Listener, PluginMessageListener {
 
@@ -52,9 +52,9 @@ class Main : JavaPlugin(), Listener, PluginMessageListener {
             try {
                 languagefile.createNewFile()
                 languageconfig.createSection("Language")
-                languageconfig["Language.Prefix"] = "&7[&9Draconyx&7] "
+                languageconfig["Language.Prefix"] = "&7[&9DraconyX&7] "
                 languageconfig["Language.ReloadCommand"] = "&9Plugin Configuration Successfully Reloaded!"
-                languageconfig["Language.AccessDenied"] = "&cAccess Denied, Missing Privileges. If you think this is a mistake please contact an Administrator of the server. (Developer Contact - Kiyoshi#1010)"
+                languageconfig["Language.AccessDenied"] = "&cAccess Denied, Missing Privileges. If you think this is a mistake please contact an Administrator of the server. (Developer Contact - Kiyoshi#6985)"
                 languageconfig["Language.PluginsSpoofMessage"] = "&fPlugins (0):"
                 languageconfig.save(languagefile)
             } catch (ex: IOException) {
@@ -65,16 +65,17 @@ class Main : JavaPlugin(), Listener, PluginMessageListener {
 
     @Suppress("FunctionName")
     private fun Events(){
-        server.pluginManager.registerEvents(OPProtection, this)
+//        server.pluginManager.registerEvents(OPProtection, this)
         server.pluginManager.registerEvents(BlockedCMDs, this)
         server.pluginManager.registerEvents(TabComplete, this)
         server.pluginManager.registerEvents(F3BrandChange, this)
+        server.pluginManager.registerEvents(JoinUpdateChecker, this)
     }
 
     @Suppress("FunctionName")
     private fun Commands(){
-        getCommand("draconyx")!!.setExecutor(Draconyx)
-        getCommand("draconyx")!!.tabCompleter = Draconyx
+        getCommand("draconyx")!!.setExecutor(DraconyX)
+        getCommand("draconyx")!!.tabCompleter = DraconyX
     }
 
     override fun onEnable() {
@@ -83,14 +84,21 @@ class Main : JavaPlugin(), Listener, PluginMessageListener {
         Events()
         Commands()
         PAPI = server.pluginManager.getPlugin("PlaceholderAPI") != null
-        if (PAPI) logger.info("[Draconyx] PlaceholderAPI found.")
-        else logger.info("[Draconyx] PlaceholderAPI not found.")
+        if (PAPI) logger.info("[DraconyX] PlaceholderAPI found.")
+        else logger.info("[DraconyX] PlaceholderAPI not found.")
         PROTOCOLLIB = server.pluginManager.getPlugin("ProtocolLib") != null
-        if (PROTOCOLLIB) logger.info("[Draconyx] ProtocolLib found.")
-        else logger.info("[Draconyx] ProtocolLib not found.")
-        if(config.getString("vConfig") != "18"){
-            logger.severe("[Draconyx] Error while loading configuration. (Fatal vConfig Change)")
+        if (PROTOCOLLIB) logger.info("[DraconyX] ProtocolLib found.")
+        else logger.info("[DraconyX] ProtocolLib not found.")
+        if(config.getString("vConfig") != "19"){
+            logger.severe("[DraconyX] Error while loading configuration. (Fatal vConfig Change) Check Updates on https://spigot.kiyoshi.space")
             pluginLoader.disablePlugin(this)
+        }
+        KiyoshiUpdateChecker(this, 106335).getVersion { version ->
+            if (description.version == version) {
+                logger.info("[DraconyX7] You are running the latest version of DraconyX")
+            } else {
+                logger.info("[DraconyX7] New update avaliable for DraconyX downloadable from https://spigot.kiyoshi.space")
+            }
         }
     }
 

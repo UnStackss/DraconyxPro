@@ -8,22 +8,21 @@
 # GitHub: https://github.com/MyNameIsKiyoshi Discord: https://discord.gg/ka7uGKfy7p (Pro Version)
 
 # Don't Touch This Section
-vConfig: "18"
+vConfig: "19"
 
 # F3-Mark
 F3Mark:
   Status: true
-  Mark: "&9&lProtected By Draconyx PRO"
+  Mark: "&9&lProtected By DraconyX PRO"
 
 PluginsSpoof: # Message Editable In language.yml
   Status: false
 
 # Protected Operators (Allowed Ops)
-OpSProtection:
-  Status: true
-  Operators:
-    - "MyNameIsKiyoshi"
-    - "ExamplePlayer"
+#OpSProtection:
+#  Status: true           # Disabled For Maintenance #
+#  Operators:             # This does not work now
+#    - "MyNameIsKiyoshi"
 
 # TabComplete Blocked Commands
 bTabCommands:

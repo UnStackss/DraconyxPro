@@ -1,14 +1,14 @@
 name: DraconyxPro
-version: '1.20.5'
+version: '1.21.9'
 main: fur.kiysohi.draconyxpro.Main
 api-version: 1.19
 authors: [ MyNameIsKiyoshi ]
 description: Block CMDs, TabComplete, F3-Mark and More!!
-website: https://github.com/MyNameIsKiyoshi
+website: https://github.kiyoshi.space
 softdepend:
   - ProtocolLib
   - PlaceholderAPI
 commands:
   draconyx:
-    description: "DraconyxPRO Super Anti Blocker."
+    description: "DraconyX PRO Super Anti Blocker."
     aliases: [ dx ]
