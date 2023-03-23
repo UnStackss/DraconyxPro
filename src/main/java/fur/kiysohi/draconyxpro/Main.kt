@@ -2,6 +2,8 @@ package fur.kiysohi.draconyxpro
 
 import fur.kiysohi.draconyxpro.commands.DraconyX
 import fur.kiysohi.draconyxpro.events.*
+import fur.kiysohi.draconyxpro.utils.DraconyXPlaceHolders
+import org.bukkit.Bukkit
 import org.bukkit.configuration.file.FileConfiguration
 import org.bukkit.configuration.file.YamlConfiguration
 import org.bukkit.entity.Player
@@ -83,8 +85,16 @@ class Main : JavaPlugin(), Listener, PluginMessageListener {
         Events()
         Commands()
         PAPI = server.pluginManager.getPlugin("PlaceholderAPI") != null
-        if (PAPI) logger.info("[DraconyX] PlaceholderAPI found.")
-        else logger.info("[DraconyX] PlaceholderAPI not found.")
+        if (PAPI) {
+            logger.info("[DraconyX] PlaceholderAPI found.")
+            if (Bukkit.getPluginManager().isPluginEnabled("PlaceholderAPI")) {
+                DraconyXPlaceHolders().register()
+            } else {
+                logger.info("[KiyoshiCore] PlaceholderAPI found but not enabled.")
+            }
+        } else {
+            logger.info("[DraconyX] PlaceholderAPI not found.")
+        }
         PROTOCOLLIB = server.pluginManager.getPlugin("ProtocolLib") != null
         if (PROTOCOLLIB) logger.info("[DraconyX] ProtocolLib found.")
         else logger.info("[DraconyX] ProtocolLib not found.")

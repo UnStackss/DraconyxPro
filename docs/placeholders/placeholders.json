@@ -1,0 +1,6 @@
+{
+  // DraconyX Pro PlaceHolders (https://www.spigotmc.org/resources/placeholderapi.6245/)
+  "%draconyxpro_version%": "Returns the version of the plugin",
+  "%draconyxpro_f3mark%": "Return the F3Mark in raw format",
+  "%draconyxpro_f3mark_formatted": "Returns the F3Mark formatted"
+}
