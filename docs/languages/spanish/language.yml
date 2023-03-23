@@ -1,6 +1,0 @@
-# Created By Mr.Fox
-Language:
-  Prefix: '&7[&9DraconyX&7] '
-  ReloadCommand: '&9La configuración fue recargada correctamente.'
-  AccessDenied: '&cAcceso denegado, privilegios faltantes. Si crees que es un error, contacta a un administrador del servidor. (Contacto del Desarrollador - Kiyoshi#6985)'
-  PluginsSpoofMessage: '&fPlugins (0):'
