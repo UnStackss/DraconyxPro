@@ -1,1 +1,6 @@
-
+Language:
+  Prefix: '&7[&9DraconyX&7] '
+  ReloadCommand: '&9Config ricaricato con Successo!'
+  AccessDenied: '&cAccesso Negato, Permessi Mancanti. Se pensi sia un errore
+    contatta un Amministratore del Server. (Contatto Developer - Kiyoshi#6985)'
+  PluginsSpoofMessage: '&fPlugins (0):'

@@ -17,6 +17,7 @@ F3Mark:
 
 PluginsSpoof: # Message Editable In language\language.yml
   # You can find ohter languages in
+  # (https://github.com/MyNameIsKiyoshi/DraconyxPro/tree/master/docs/languages)
   Status: false
 
 # TabComplete Blocked Commands
