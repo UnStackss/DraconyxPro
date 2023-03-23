@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'fur.kiyoshi'
-version = '1.20.5a'
+version = '1.21.7a'
 
 
 repositories {
@@ -48,10 +48,10 @@ repositories {
 
 dependencies {
     //noinspection VulnerableLibrariesLocal
-    compileOnly 'org.spigotmc:spigot-api:1.19.3-R0.1-SNAPSHOT'
+    compileOnly 'org.spigotmc:spigot-api:1.19.4-R0.1-SNAPSHOT'
     //noinspection VulnerableLibrariesLocal
-    compileOnly 'org.spigotmc:spigot:1.19.2-R0.1-SNAPSHOT'
-    compileOnly 'me.clip:placeholderapi:2.11.2'
+    compileOnly 'org.spigotmc:spigot:1.19.4-R0.1-SNAPSHOT'
+    compileOnly 'me.clip:placeholderapi:2.11.3'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 }
 

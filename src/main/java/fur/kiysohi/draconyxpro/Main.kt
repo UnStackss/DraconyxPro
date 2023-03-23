@@ -65,7 +65,6 @@ class Main : JavaPlugin(), Listener, PluginMessageListener {
 
     @Suppress("FunctionName")
     private fun Events(){
-//        server.pluginManager.registerEvents(OPProtection, this)
         server.pluginManager.registerEvents(BlockedCMDs, this)
         server.pluginManager.registerEvents(TabComplete, this)
         server.pluginManager.registerEvents(F3BrandChange, this)
@@ -89,7 +88,7 @@ class Main : JavaPlugin(), Listener, PluginMessageListener {
         PROTOCOLLIB = server.pluginManager.getPlugin("ProtocolLib") != null
         if (PROTOCOLLIB) logger.info("[DraconyX] ProtocolLib found.")
         else logger.info("[DraconyX] ProtocolLib not found.")
-        if(config.getString("vConfig") != "19"){
+        if(config.getString("vConfig") != "20"){
             logger.severe("[DraconyX] Error while loading configuration. (Fatal vConfig Change) Check Updates on https://spigot.kiyoshi.space")
             pluginLoader.disablePlugin(this)
         }

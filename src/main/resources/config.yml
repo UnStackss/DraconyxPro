@@ -8,33 +8,36 @@
 # GitHub: https://github.com/MyNameIsKiyoshi Discord: https://discord.gg/ka7uGKfy7p (Pro Version)
 
 # Don't Touch This Section
-vConfig: "19"
+vConfig: "20"
 
-# F3-Mark
+# F3-Mark (Hex Support https://g.co/kgs/56o9TW)
 F3Mark:
   Status: true
   Mark: "&9&lProtected By DraconyX PRO"
 
-PluginsSpoof: # Message Editable In language.yml
+PluginsSpoof: # Message Editable In language\language.yml
+  # You can find ohter languages in
   Status: false
 
-# Protected Operators (Allowed Ops)
-#OpSProtection:
-#  Status: true           # Disabled For Maintenance #
-#  Operators:             # This does not work now
-#    - "MyNameIsKiyoshi"
-
 # TabComplete Blocked Commands
+# If are u using FastAsyncWorldEdit(Fawe) // WorldEdit
+# Use this syntax (https://i.imgur.com/y26seR7.png)
 bTabCommands:
   - "version"
   - "about"
-  - "plugins"
+  - "version"
+  - "ver"
+  - "?"
+  - "bukkit"
 
 # Blocked Commands
 bCommands:
   - "/version"
   - "/about"
-  - "/plugins"
+  - "/version"
+  - "/ver"
+  - "/?"
+  - "/bukkit"
 
 # Sounds System Link Of All Sounds Below.
 # https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
