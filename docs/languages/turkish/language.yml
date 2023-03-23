@@ -1,0 +1,6 @@
+Language:
+  Prefix: '&7[&9DraconyX&7] '
+  ReloadCommand: '&9Yapılandırma başarıyla yeniden yüklendi!'
+  AccessDenied: '&cErişim Reddedildi, İzinler Eksik. Eğer bunun bir hata olduğunu
+    düşünüyorsan bir Sunucu Yöneticisi ile iletişime geçin. (Geliştirici İletişim - Kiyoshi#6985)'
+  PluginsSpoofMessage: '&fEklentiler (0):'
