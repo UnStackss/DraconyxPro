@@ -1,14 +1,28 @@
 name: DraconyxPro
 version: '1.19.4'
 main: fur.kiysohi.draconyxpro.Main
+prefix: "DraconyX Pro"
 api-version: 1.19
 authors: [ MyNameIsKiyoshi ]
 description: Block CMDs, TabComplete, F3-Mark and More!!
 website: https://github.kiyoshi.space
 softdepend:
-  - ProtocolLib
   - PlaceholderAPI
 commands:
   draconyx:
     description: "DraconyX PRO Super Anti Blocker."
     aliases: [ dx ]
+
+permissions:
+  draconyx.admin.reload:
+    description: "Allows you to reload the plugin"
+    default: op
+  draconyx.admin.update:
+    description: "Allows you to update the plugin"
+    default: op
+  draconyx.commands.bypass:
+    description: "Allows you to bypass the command execution block"
+    default: op
+  draconyx.tab.bypass:
+    description: "Allows you to bypass the tab completion block"
+    default: op
